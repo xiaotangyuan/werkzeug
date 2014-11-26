@@ -4,11 +4,12 @@
     ~~~~~~~~
 
     Werkzeug is the Swiss Army knife of Python web development.
-
+	werkzeug是pythonweb开发的瑞士军刀
     It provides useful classes and functions for any WSGI application to make
     the life of a python web developer much easier.  All of the provided
     classes are independent from each other so you can mix it with any other
     library.
+    	它提供了对任何wsgi应用程序有用的类和方法来让pythonweb开发更容易。所有提供的类相互之间完全独立，所以你可以将其与其他库配合使用。
 
 
     :copyright: (c) 2014 by the Werkzeug Team, see AUTHORS for more details.
@@ -25,19 +26,22 @@ __version__ = '0.10-dev'
 
 # This import magic raises concerns quite often which is why the implementation
 # and motivation is explained here in detail now.
+#  
 #
 # The majority of the functions and classes provided by Werkzeug work on the
 # HTTP and WSGI layer.  There is no useful grouping for those which is why
 # they are all importable from "werkzeug" instead of the modules where they are
 # implemented.  The downside of that is, that now everything would be loaded at
 # once, even if unused.
+# wekzeug提供的大多数方法和类都在http和wsgi层起作用，？？？？？，缺点是，所有模块都会立刻加载，即使#  暂时未使用
 #
 # The implementation of a lazy-loading module in this file replaces the
 # werkzeug package when imported from within.  Attribute access to the werkzeug
 # module will then lazily import from the modules that implement the objects.
-
+# 当在werkzeug包内部导入时，本文件中延迟加载模块的实现会将其替换，对werkzeug模块的属性访问会从实现这个对象的模块中延迟加载。
 
 # import mapping to objects in other modules
+# 导入在其他模块中的映射对象
 all_by_module = {
     'werkzeug.debug':       ['DebuggedApplication'],
     'werkzeug.local':       ['Local', 'LocalManager', 'LocalProxy',
