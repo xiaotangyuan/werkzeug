@@ -7,15 +7,20 @@
     subclass to do whatever you want them to do.  The request object contains
     the information transmitted by the client (webbrowser) and the response
     object contains all the information sent back to the browser.
+    wrappers模块包含简单的request和response对象，你可以对其进行继承扩展任意你想要做的。
+    request 对象包含有客户端发送的信息，response对象包含多有发送到浏览器的信息。
 
     An important detail is that the request object is created with the WSGI
     environ and will act as high-level proxy whereas the response object is an
     actual WSGI application.
+    一个重要的细节是，request对象是由WSGI环境创建，将会作为高层次的代理，而response
+    对象实际上是一个WSGI应用。
 
     Like everything else in Werkzeug these objects will work correctly with
     unicode data.  Incoming form data parsed by the response object will be
     decoded into an unicode object if possible and if it makes sense.
-
+    像在Werkzeug中的其他事物一样，这些对象将会和unicode数据正确的工作，
+    如果可能或者情景需要，传进response的数据会被解码成unicoded对象。
 
     :copyright: (c) 2014 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
